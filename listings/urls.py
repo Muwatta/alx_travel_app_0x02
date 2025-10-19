@@ -1,11 +1,7 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import ListingViewSet, BookingViewSet
-
-router = DefaultRouter()
-router.register(r'listings', ListingViewSet)
-router.register(r'bookings', BookingViewSet)
+from django.urls import path
+from .views import InitiatePaymentAPIView, VerifyPaymentAPIView
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('api/payments/initiate/', InitiatePaymentAPIView.as_view(), name='initiate-payment'),
+    path('api/payments/verify/', VerifyPaymentAPIView.as_view(), name='verify-payment'),
 ]

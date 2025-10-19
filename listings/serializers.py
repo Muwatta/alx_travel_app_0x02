@@ -1,12 +1,8 @@
 from rest_framework import serializers
-from .models import Listing, Booking
+from .models import Payment
 
-class ListingSerializer(serializers.ModelSerializer):
+class PaymentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Listing
+        model = Payment
         fields = '__all__'
-
-class BookingSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Booking
-        fields = '__all__'
+        read_only_fields = ('status', 'chapa_transaction_id', 'created_at', 'updated_at')
