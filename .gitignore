@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+env/
+venv/
+.alx_travel_app/env/
+.alx_travel_app_0x01/alx_travel_app/env/
+
+# Django
+db.sqlite3
+
+# System files
+*.log
+*.DS_Store
